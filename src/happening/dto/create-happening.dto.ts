@@ -1,17 +1,18 @@
 import { ApiProperty } from "@nestjs/swagger";
-import { IsString } from "class-validator";
-import { ObjectId } from "mongoose";
+import { IsNotEmpty, IsString } from "class-validator";
 
 
 export class CreateHappeningDto {
 
 
-    @IsString()
     @ApiProperty()
+    @IsNotEmpty()
+    @IsString()
     name: string;
 
-    @IsString()
     @ApiProperty()
-    latitude: ObjectId;
+    @IsNotEmpty()
+    @IsString()
+    city: string;
 
 }

@@ -3,9 +3,9 @@ import { ObjectId } from 'mongoose';
 import { CityService } from './city.service';
 import { CreateCityDto } from './dto/create-city.dto';
 import { City } from './schema/city.schema'
-import { ApiParam } from '@nestjs/swagger';
+import { ApiParam, ApiTags } from '@nestjs/swagger';
 
-
+@ApiTags('city')
 @Controller('city')
 export class CityController {
     constructor(private cityService: CityService){}

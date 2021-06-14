@@ -1,6 +1,6 @@
 export default () => ({
     database: {
-        url: "mongodb://localhost:1234/cities"
+        url: "mongodb://localhost:27017/cities"
     }
 
 });
