@@ -1,6 +1,7 @@
 
 import { Schema, Prop, SchemaFactory } from '@nestjs/mongoose';
-import { Document, ObjectId } from 'mongoose';
+import { Document, Types } from 'mongoose';
+import { City } from 'src/city/schema/city.schema';
 
 
 export type HappeningDocument = Happening & Document;
@@ -11,8 +12,8 @@ export class Happening {
     @Prop({ required: true })
     name: string;
 
-    @Prop({ type: String, ref: 'City', required: true })
-    city: ObjectId;
+    @Prop({ type: Types.ObjectId, ref: 'City', required: true })
+    city: City;
 
 }
 

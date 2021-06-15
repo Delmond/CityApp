@@ -7,7 +7,7 @@ export type CityDocument = City & Document;
 @Schema()
 export class City {
 
-    @Prop({ required: true })
+    @Prop({ required: true, unique: true })
     name: string;
 
     @Prop({ required: true })

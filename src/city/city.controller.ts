@@ -1,5 +1,5 @@
 import { Controller, Get, Post, Body, Param, UsePipes, ValidationPipe } from '@nestjs/common';
-import { ObjectId } from 'mongoose';
+import { Types } from 'mongoose';
 import { CityService } from './city.service';
 import { CreateCityDto } from './dto/create-city.dto';
 import { City } from './schema/city.schema'
@@ -21,9 +21,9 @@ export class CityController {
         return this.cityService.create(city);
     }
 
-    @ApiParam({ name: 'id', type: 'ObjectId'})
+    @ApiParam({ name: 'id', type: String})
     @Get(':id')
-    async getById(@Param('id') id: ObjectId): Promise<City> {
+    async getById(@Param('id') id: string): Promise<City> {
         return this.cityService.findById(id);
     }
 
